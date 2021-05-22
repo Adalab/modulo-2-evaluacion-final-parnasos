@@ -34,8 +34,8 @@ function handleSearch(event) {
 // renderFilms(filteredFilms);
 
 function renderFilms(data) {
-  let filmsListContent = filmsList.innerHTML;
-  filmsListContent = "";
+  filmsList.innerHTML = "";
+
   for (const eachData of data) {
     const showAllData = eachData.show;
     //console.log(showAllData); // cada una de las pelis dentro del objeto
