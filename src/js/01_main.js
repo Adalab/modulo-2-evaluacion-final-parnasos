@@ -14,8 +14,9 @@ function handleSearch(event) {
 
       renderFilms(allData);
     });
+}
 
-  /* function filterFilms() {
+/* function filterFilms() {
     // Coger el valor actual
     const searchText = searchInput.value.toLowerCase();
 
@@ -27,11 +28,10 @@ function handleSearch(event) {
     return filteredFilms;
   }*/
 
-  //const filteredFilms = filterFilms();
+//const filteredFilms = filterFilms();
 
-  // render
-  // renderFilms(filteredFilms);
-}
+// render
+// renderFilms(filteredFilms);
 
 function renderFilms(data) {
   let filmsListContent = filmsList.innerHTML;
@@ -46,34 +46,22 @@ function renderFilms(data) {
     filmsList.appendChild(newItem);
     filmsList.appendChild(picFilm);
     const newContent = document.createTextNode(`${showAllData.name}`);
-    picFilm.setAttribute("src", `${showAllData.image.medium}`);
-    //picFilm.src = `${showAllData.image}`;
-    //const newPic = document.createTextNode(`${showAllData.image}`);
     newItem.appendChild(newContent);
-    //picFilm.appendChild(picFilm);
-  }
-  /*for (const film of allData) {
-    let htmlName = "";
-    for (let i = 0; i < film.name.length; i++) {
-      htmlName += `<li class="item__film-each" style="background-color:#${film.name[i]};"></li>`;
+    if (showAllData.image === null) {
+      picFilm.setAttribute(
+        "src",
+        `https://via.placeholder.com/210x295/ffffff/666666/?text=${showAllData.name}`
+      );
+    } else {
+      picFilm.setAttribute("src", `${showAllData.image.medium}`);
     }
-  }*/
+  }
+}
 
-  /* const paletteFav = favoritePalettes.find((eachPalette) => eachPalette.id === palette.id );
+/* const paletteFav = favoritePalettes.find((eachPalette) => eachPalette.id === palette.id );
   
       const classFavorite = paletteFav === undefined ? '' : 'favorite';
   
-      paletteList.innerHTML += `
-        <li id="${palette.id}" class="palette__list--item js-card ${classFavorite}">
-          <h3 class="item__name">${palette.name}</h3>
-          <p>Origen:${palette.from}</p>
-          <div class="item__colors-box">
-            <span>Colores:</span>
-            <ul class="item__colors-list">
-              ${htmlColors}
-            </ul>
-          </div>
-        </li>`;
-    } */
-}
+      
+}*/
 searchBtn.addEventListener("click", handleSearch);
