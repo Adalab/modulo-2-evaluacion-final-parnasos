@@ -8,6 +8,16 @@
 
   border: dotted 3px $background;
 }
+.boxFav {
+  background-color: $almostwhite;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+
+  border: dotted 3px $background;
+}
 .liElement {
   display: contents;
 }
@@ -15,5 +25,10 @@
 .titleItem {
   background-color: $orange;
   color: $almostwhite;
+  font-size: 20px;
+}
+.titleFav {
+  background-color: $almostwhite;
+  color: $orange;
   font-size: 20px;
 }

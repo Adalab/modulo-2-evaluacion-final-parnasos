@@ -3,19 +3,19 @@
 let allData = [];
 let favoriteFilms = [];
 
-/*function handleSearch(event) {
+function handleSearch(event) {
   event.preventDefault();
   fetch(`http://api.tvmaze.com/search/shows?q=${searchInput.value}`)
     .then((response) => response.json())
     .then((data) => {
-      const totalInfo = data;
-      renderFilms(totalInfo);
+      allData = data;
+      renderFilms(allData);
     });
 }
 
-searchBtn.addEventListener("click", handleSearch);*/
+searchBtn.addEventListener("click", handleSearch);
 
-function handleSearch(event) {
+/*function handleSearch(event) {
   if (localStorage.getItem("films") === null) {
     // No tiene los datos guardados
     fetch(`http://api.tvmaze.com/search/shows?q=${searchInput.value}`)
@@ -36,4 +36,4 @@ function handleSearch(event) {
     renderFilms(allData);
   }
 }
-searchBtn.addEventListener("click", handleSearch);
+searchBtn.addEventListener("click", handleSearch);*/

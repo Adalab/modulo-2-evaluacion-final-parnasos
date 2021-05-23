@@ -8,30 +8,43 @@ function addListenersToFilm() {
 }
 
 function handleClickFilm(event) {
-  const whereUClicked = event.target;
-  const whereIAddedTheEvent = event.currentTarget;
+  //const whereUClicked = event.target;
+  const boxSelected = event.currentTarget;
 
   console.log(allData);
-  console.log(whereIAddedTheEvent);
+  console.log(boxSelected);
 
-  const selectedId = whereIAddedTheEvent.id;
+  const boxId = boxSelected.id;
+  if (boxSelected.classList.contains("boxNewItem")) {
+    boxSelected.classList.remove("boxNewItem");
+    boxSelected.classList.add("boxFav");
+    const titleSelected = document.querySelector(".js-titleItem");
+    titleSelected.classList.remove("titleItem");
+    titleSelected.classList.add("titleFav");
+  } else {
+    const titleSelected = document.querySelector(".js-titleItem");
+    titleSelected.classList.add("titleItem");
+    titleSelected.classList.remove("titleFav");
+    boxSelected.classList.add("boxNewItem");
+    boxSelected.classList.remove("boxFav");
+  }
+  const filmInfo = allData.find((film) => film.id === boxId);
 
-  const filmInfo = allData.find((film) => film.id === selectedId);
-  const filmFav = favoriteFilms.find((eachFilm) => eachFilm.id === selectedId);
+  const filmFav = favoriteFilms.find((eachFilm) => eachFilm.id === boxId);
 
-  /* if (filmFav === undefined) {
+  if (filmFav === undefined) {
     // No es ya favorita
     // La añado
-    favoriteFilms.push(filmInfo);
+    favoriteFilms.push(boxSelected);
   } else {
     // Ya era una favorita
     // La quito de favoritas
-    favoriteFilms = favoriteFilms.filter((film) => film.id !== selectedId);
+    favoriteFilms = favoriteFilms.filter((film) => film.id !== boxId);
   }
   console.log(favoriteFilms);
-  const filteredFilms = filterFilms();
+  //const filteredFilms = filterFilms();
 
-  // render
-  renderFilms(filteredFilms);
+  /*// render
+  renderFilms(favoriteFilms);
   //whereIAddedTheEvent.classList.toggle('favorite');*/
 }

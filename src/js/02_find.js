@@ -12,10 +12,11 @@ function renderFilms(data) {
     const newItem = document.createElement("li");
     boxNewItem.appendChild(newItem);
     newItem.classList.add("liElement");
-    newItem.setAttribute("id", `${showAllData.id}`);
+    boxNewItem.setAttribute("id", `${showAllData.id}`);
     const itemName = document.createElement("h3");
     newItem.appendChild(itemName);
     itemName.classList.add("titleItem");
+    itemName.classList.add("js-titleItem");
     const titleItem = document.createTextNode(`${showAllData.name}`);
     itemName.appendChild(titleItem);
     const itemPic = document.createElement("img");
@@ -33,7 +34,7 @@ function renderFilms(data) {
   addListenersToFilm();
 }
 
-function filterFilms() {
+/*function filterFilms() {
   // Coger el valor actual
   const searchInputText = searchInput.value.toLowerCase();
 
@@ -43,4 +44,4 @@ function filterFilms() {
   );
 
   return filteredFilms;
-}
+}*/
