@@ -9,9 +9,6 @@ function handleSearch(event) {
     .then((response) => response.json())
     .then((data) => {
       const allData = data;
-      //todas las pelis encontradas
-      console.log(allData);
-
       renderFilms(allData);
     });
 }
@@ -32,31 +29,6 @@ function handleSearch(event) {
 
 // render
 // renderFilms(filteredFilms);
-
-function renderFilms(data) {
-  filmsList.innerHTML = "";
-
-  for (const eachData of data) {
-    const showAllData = eachData.show;
-    //console.log(showAllData); // cada una de las pelis dentro del objeto
-    //console.log(showAllData.name);
-    //console.log(showAllData.image);
-    const newItem = document.createElement("li");
-    const picFilm = document.createElement("img");
-    filmsList.appendChild(newItem);
-    filmsList.appendChild(picFilm);
-    const newContent = document.createTextNode(`${showAllData.name}`);
-    newItem.appendChild(newContent);
-    if (showAllData.image === null) {
-      picFilm.setAttribute(
-        "src",
-        `https://via.placeholder.com/210x295/ffffff/666666/?text=${showAllData.name}`
-      );
-    } else {
-      picFilm.setAttribute("src", `${showAllData.image.medium}`);
-    }
-  }
-}
 
 /* const paletteFav = favoritePalettes.find((eachPalette) => eachPalette.id === palette.id );
   
