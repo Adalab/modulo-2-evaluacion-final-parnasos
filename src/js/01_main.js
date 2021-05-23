@@ -13,27 +13,4 @@ function handleSearch(event) {
     });
 }
 
-/* function filterFilms() {
-    // Coger el valor actual
-    const searchText = searchInput.value.toLowerCase();
-
-    // Filtrar las paletas que inluyen el campo de búsqueda
-    const filteredFilms = allData.filter((film) =>
-      film.name.toLowerCase().includes(searchText)
-    );
-
-    return filteredFilms;
-  }*/
-
-//const filteredFilms = filterFilms();
-
-// render
-// renderFilms(filteredFilms);
-
-/* const paletteFav = favoritePalettes.find((eachPalette) => eachPalette.id === palette.id );
-  
-      const classFavorite = paletteFav === undefined ? '' : 'favorite';
-  
-      
-}*/
 searchBtn.addEventListener("click", handleSearch);

@@ -11,6 +11,7 @@ function renderFilms(data) {
     const newItem = document.createElement("li");
     boxNewItem.appendChild(newItem);
     newItem.classList.add("liElement");
+    newItem.setAttribute("id", `${showAllData.id}`);
     const itemName = document.createElement("h3");
     newItem.appendChild(itemName);
     itemName.classList.add("titleItem");
