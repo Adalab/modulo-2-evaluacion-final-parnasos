@@ -1,7 +1,7 @@
 "use strict";
 
 function addListenersToFilm() {
-  const allFilms = document.querySelectorAll(".js-boxNewItem");
+  const allFilms = document.querySelectorAll(".js-liElement");
   for (const film of allFilms) {
     film.addEventListener("click", handleClickFilm);
   }
@@ -9,13 +9,23 @@ function addListenersToFilm() {
 
 function handleClickFilm(event) {
   //const whereUClicked = event.target;
-  const boxSelected = event.currentTarget;
+  const filmSelected = event.currentTarget;
 
   console.log(allData);
-  console.log(boxSelected);
+  console.log(filmSelected);
 
-  const boxId = boxSelected.id;
-  if (boxSelected.classList.contains("boxNewItem")) {
+  const filmId = filmSelected.dataset.id;
+  const idExist = favoriteFilms.find((favoriteId) => favoriteId === filmId);
+  console.log(filmId);
+  if (idExist === undefined) {
+    favoriteFilms.push(filmId);
+  } else {
+    favoriteFilms = favoriteFilms.filter((favoriteId) => favoriteId !== filmId);
+  }
+  renderFilms(favoriteFilms);
+}
+console.log(favoriteFilms);
+/*if (boxSelected.classList.contains("boxNewItem")) {
     boxSelected.classList.remove("boxNewItem");
     boxSelected.classList.add("boxFav");
     const titleSelected = document.querySelector(".js-titleItem");
@@ -41,10 +51,9 @@ function handleClickFilm(event) {
     // La quito de favoritas
     favoriteFilms = favoriteFilms.filter((film) => film.id !== boxId);
   }
-  console.log(favoriteFilms);
-  //const filteredFilms = filterFilms();
+  console.log(favoriteFilms);*/
+//const filteredFilms = filterFilms();
 
-  /*// render
+/*// render
   renderFilms(favoriteFilms);
   //whereIAddedTheEvent.classList.toggle('favorite');*/
-}

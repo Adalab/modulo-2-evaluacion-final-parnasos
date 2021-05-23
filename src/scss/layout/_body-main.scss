@@ -1,4 +1,4 @@
-.boxNewItem {
+/*.boxNewItem {
   background-color: $orange;
   width: 200px;
   display: flex;
@@ -7,28 +7,34 @@
   padding: 10px;
 
   border: dotted 3px $background;
-}
-.boxFav {
+}*/
+.liFavorite {
   background-color: $almostwhite;
   width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 10px;
-
   border: dotted 3px $background;
 }
 .liElement {
   display: contents;
+  background-color: $green;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  border: dotted 3px $background;
 }
 
 .titleItem {
-  background-color: $orange;
+  background-color: $green;
   color: $almostwhite;
   font-size: 20px;
 }
 .titleFav {
   background-color: $almostwhite;
-  color: $orange;
+  color: $green;
   font-size: 20px;
 }
