@@ -11,31 +11,27 @@ function handleClickFilm(event) {
   const whereUClicked = event.target;
   const whereIAddedTheEvent = event.currentTarget;
 
-  console.log(globalData);
+  console.log(allData);
   console.log(whereIAddedTheEvent);
 
   const selectedId = whereIAddedTheEvent.id;
 
-  const paletteInfo = globalData.find((palette) => palette.id === selectedId);
-  const paletteFav = favoritePalettes.find(
-    (eachPalette) => eachPalette.id === selectedId
-  );
+  const filmInfo = allData.find((film) => film.id === selectedId);
+  const filmFav = favoriteFilms.find((eachFilm) => eachFilm.id === selectedId);
 
-  if (paletteFav === undefined) {
+  /* if (filmFav === undefined) {
     // No es ya favorita
     // La añado
-    favoritePalettes.push(paletteInfo);
+    favoriteFilms.push(filmInfo);
   } else {
     // Ya era una favorita
     // La quito de favoritas
-    favoritePalettes = favoritePalettes.filter(
-      (palette) => palette.id !== selectedId
-    );
+    favoriteFilms = favoriteFilms.filter((film) => film.id !== selectedId);
   }
-
-  const filteredPalettes = filterPalettes();
+  console.log(favoriteFilms);
+  const filteredFilms = filterFilms();
 
   // render
-  renderPalettes(filteredPalettes);
-  //whereIAddedTheEvent.classList.toggle('favorite');
+  renderFilms(filteredFilms);
+  //whereIAddedTheEvent.classList.toggle('favorite');*/
 }

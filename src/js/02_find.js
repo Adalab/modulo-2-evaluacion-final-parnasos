@@ -7,6 +7,7 @@ function renderFilms(data) {
     const showAllData = eachData.show;
     const boxNewItem = document.createElement("div");
     boxNewItem.classList.add("boxNewItem");
+    boxNewItem.classList.add("js-boxNewItem");
     filmsList.appendChild(boxNewItem);
     const newItem = document.createElement("li");
     boxNewItem.appendChild(newItem);
@@ -29,4 +30,17 @@ function renderFilms(data) {
       itemPic.setAttribute("src", `${showAllData.image.medium}`);
     }
   }
+  addListenersToFilm();
+}
+
+function filterFilms() {
+  // Coger el valor actual
+  const searchInputText = searchInput.value.toLowerCase();
+
+  // Filtrar las paletas que inluyen el campo de búsqueda
+  const filteredFilms = allData.filter((film) =>
+    film.name.toLowerCase().includes(searchInputText)
+  );
+
+  return filteredFilms;
 }
