@@ -6,7 +6,7 @@ function renderFilms(data) {
     const showAllData = eachData.show;
 
     const idExist = favoriteFilms.find(
-      (favoriteId) => favoriteId === showAllData.id
+      (favoriteId) => favoriteId === showAllData.id.toString()
     );
 
     if (idExist === undefined) {

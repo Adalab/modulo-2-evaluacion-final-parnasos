@@ -22,9 +22,10 @@ function handleClickFilm(event) {
   } else {
     favoriteFilms = favoriteFilms.filter((favoriteId) => favoriteId !== filmId);
   }
-  renderFilms(favoriteFilms);
+  renderFilms(allData);
 }
 console.log(favoriteFilms);
+console.log(allData);
 /*if (boxSelected.classList.contains("boxNewItem")) {
     boxSelected.classList.remove("boxNewItem");
     boxSelected.classList.add("boxFav");
