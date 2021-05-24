@@ -1,4 +1,4 @@
-<main class="">
+<main class="main">
   <form class="js-form form" action="#">
     <input
       class="js-searchText search"
@@ -6,6 +6,12 @@
       placeholder="Por ejemplo: 'Dexter'"
     />
     <input class="js-searchBtn" type="submit" value="Search" />
-    <ul class="js-filmList filmsList"></ul>
   </form>
+  <div class="contentResults">
+    <section class="favoritList">
+      <h3 class="favoritList__title">Mis series favoritas</h3>
+      <ul class="favoritList__items js-favoriteItems"></ul>
+    </section>
+    <ul class="js-filmList filmsList"></ul>
+  </div>
 </main>

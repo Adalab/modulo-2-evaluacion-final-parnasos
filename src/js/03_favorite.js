@@ -23,38 +23,26 @@ function handleClickFilm(event) {
     favoriteFilms = favoriteFilms.filter((favoriteId) => favoriteId !== filmId);
   }
   renderFilms(allData);
+  addToSection(favoriteFilms);
 }
 console.log(favoriteFilms);
 console.log(allData);
-/*if (boxSelected.classList.contains("boxNewItem")) {
-    boxSelected.classList.remove("boxNewItem");
-    boxSelected.classList.add("boxFav");
-    const titleSelected = document.querySelector(".js-titleItem");
-    titleSelected.classList.remove("titleItem");
-    titleSelected.classList.add("titleFav");
-  } else {
-    const titleSelected = document.querySelector(".js-titleItem");
-    titleSelected.classList.add("titleItem");
-    titleSelected.classList.remove("titleFav");
-    boxSelected.classList.add("boxNewItem");
-    boxSelected.classList.remove("boxFav");
+
+function addToSection(data) {
+  for (const eachData of allData) {
+    const showAllData = eachData.show.id;
+    if (showAllData === filmId) {
+      const pickedFilm = pickedFilm.parentElement;
+    }
+    for (const favfilm of favoriteFilms) {
+      const favLi = document.createElement("li");
+      //const pickedFilm = allData.find((favoriteId) => favoriteId === filmId);
+      //const showPicked = pickedFilm.parentElement;
+      const favLicontent = document.createTextNode(
+        `${showPicked.name}${showPicked.src}`
+      );
+      favoriteSection.appendChild(favLi);
+      favLi.appendChild(favLicontent);
+    }
   }
-  const filmInfo = allData.find((film) => film.id === boxId);
-
-  const filmFav = favoriteFilms.find((eachFilm) => eachFilm.id === boxId);
-
-  if (filmFav === undefined) {
-    // No es ya favorita
-    // La añado
-    favoriteFilms.push(boxSelected);
-  } else {
-    // Ya era una favorita
-    // La quito de favoritas
-    favoriteFilms = favoriteFilms.filter((film) => film.id !== boxId);
-  }
-  console.log(favoriteFilms);*/
-//const filteredFilms = filterFilms();
-
-/*// render
-  renderFilms(favoriteFilms);
-  //whereIAddedTheEvent.classList.toggle('favorite');*/
+}
