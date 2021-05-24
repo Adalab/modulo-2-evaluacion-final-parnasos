@@ -1,26 +1,38 @@
-.contentResults {
-  display: flex;
+.header {
+  margin: 30px auto 30px 30px;
 }
 
-.favoritList {
+.form {
+  margin: 10px auto 30px 30px;
+}
+.btn {
+  margin-left: 20px;
+}
+
+.contentResults {
+  display: flex;
+  margin: 30px;
+}
+
+.favoriteList {
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
 }
+
 .filmsList {
   width: 80%;
   display: grid;
   grid-auto-rows: max-content;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 .liFavorite {
   background-color: $almostwhite;
-  width: 200px;
+  width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,10 +44,10 @@
   //grid-row: ;
   display: contents;
   background-color: $green;
-  width: 200px;
+  width: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px;
   border: dotted 3px $background;
 }
@@ -44,6 +56,7 @@
   background-color: $green;
   color: $almostwhite;
   font-size: 20px;
+  margin: 10px;
 }
 .titleFav {
   background-color: $almostwhite;
@@ -56,7 +69,22 @@ input::placeholder {
 .hidden {
   display: none;
 }
-.favoritList__items {
+.favoriteList__items {
   display: contents;
   text-decoration: none;
+}
+.footer {
+  display: none;
+  height: 5%;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  border-top: solid 1px $dark;
+  padding: 5px;
+  font-size: 14px;
+}
+.picFav {
+  width: 100px;
 }

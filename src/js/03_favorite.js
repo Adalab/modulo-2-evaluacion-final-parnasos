@@ -8,41 +8,41 @@ function addListenersToFilm() {
 }
 
 function handleClickFilm(event) {
-  //const whereUClicked = event.target;
   const filmSelected = event.currentTarget;
 
-  console.log(allData);
-  console.log(filmSelected);
-
-  const filmId = filmSelected.dataset.id;
-  const idExist = favoriteFilms.find((favoriteId) => favoriteId === filmId);
-  console.log(filmId);
+  const filmId = parseInt(filmSelected.dataset.id);
+  const idExist = favoriteFilms.find(
+    (favoriteData) => favoriteData.show.id === filmId
+  );
+  //console.log(filmId);
   if (idExist === undefined) {
-    favoriteFilms.push(filmId);
+    const objSerieData = allData.find(
+      (serieData) => serieData.show.id === filmId
+    );
+    favoriteFilms.push(objSerieData);
   } else {
-    favoriteFilms = favoriteFilms.filter((favoriteId) => favoriteId !== filmId);
+    favoriteFilms = favoriteFilms.filter(
+      (favoriteData) => favoriteData.show.id !== filmId
+    );
   }
   renderFilms(allData);
-  addToSection(favoriteFilms);
+  renderFavorites(favoriteFilms);
 }
-console.log(favoriteFilms);
-console.log(allData);
+//console.log(favoriteFilms);
+//onsole.log(allData);
 
-function addToSection(data) {
-  for (const eachData of allData) {
-    const showAllData = eachData.show.id;
-    if (showAllData === filmId) {
-      const pickedFilm = pickedFilm.parentElement;
-    }
-    for (const favfilm of favoriteFilms) {
-      const favLi = document.createElement("li");
-      //const pickedFilm = allData.find((favoriteId) => favoriteId === filmId);
-      //const showPicked = pickedFilm.parentElement;
-      const favLicontent = document.createTextNode(
-        `${showPicked.name}${showPicked.src}`
+function renderFavorites(data) {
+  for (const favfilm of favoriteFilms) {
+    favoriteSection.innerHTML += `<li class="liFav js-liFav" data-id="${favfilm.show.id}"><h3 class="titleFav js-titleFav">${favfilm.show.name}</h3><img class="js-picFav${favfilm.show.id} picFav"></img></li>`;
+    const picFav = document.querySelector(`.js-picFav${favfilm.show.id}`);
+
+    if (favfilm.show.image === null) {
+      picFav.setAttribute(
+        "src",
+        `https://via.placeholder.com/210x295/ffffff/666666/?text=???`
       );
-      favoriteSection.appendChild(favLi);
-      favLi.appendChild(favLicontent);
+    } else {
+      picFav.setAttribute("src", `${favfilm.show.image.medium}`);
     }
   }
 }
