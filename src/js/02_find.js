@@ -37,14 +37,30 @@ function renderFilms(data) {
   addListenersToFilm();
 }
 
-/*function filterFilms() {
-  // Coger el valor actual
-  const searchInputText = searchInput.value.toLowerCase();
+if (localStorage.getItem("favData") !== null) {
+  const favSaved = JSON.parse(localStorage.getItem("favData"));
+  // const allSaved = JSON.parse(localStorage.getItem("allData"));
+  console.log(favSaved);
+  renderFavorites(favSaved);
+}
 
-  // Filtrar las paletas que inluyen el campo de búsqueda
-  const filteredFilms = allData.filter((film) =>
-    film.name.toLowerCase().includes(searchInputText)
-  );
+function renderFavorites(data) {
+  console.log(`entro ahora`, data);
+  for (const item of data) {
+    console.log(`entro en el for`);
+    if (item === null) {
+      favoriteSection.innerHTML += "<h3>Hola</h3>";
+    }
+    favoriteSection.innerHTML += `<li class="liFav js-liFav" data-id="${item.show.id}"><h3 class="titleFav js-titleFav">${item.show.name}</h3><img class="js-picFav${item.show.id} picFav"></img></li>`;
+    const picFav = document.querySelector(`.js-picFav${item.show.id}`);
 
-  return filteredFilms;
-}*/
+    if (item.show.image === null) {
+      picFav.setAttribute(
+        "src",
+        `https://via.placeholder.com/210x295/ffffff/666666/?text=???`
+      );
+    } else {
+      picFav.setAttribute("src", `${item.show.image.medium}`);
+    }
+  }
+}

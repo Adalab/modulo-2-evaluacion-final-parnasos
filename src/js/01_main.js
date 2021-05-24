@@ -10,6 +10,7 @@ function handleSearch(event) {
     .then((data) => {
       allData = data;
       renderFilms(allData);
+      localStorage.setItem("allData", JSON.stringify(allData));
     });
 }
 
