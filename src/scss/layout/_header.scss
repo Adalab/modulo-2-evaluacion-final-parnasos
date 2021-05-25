@@ -1,3 +1,11 @@
+.header {
+  margin: 30px auto 50px;
+  border-bottom: solid 2px $dark;
+  box-sizing: content-box;
+  height: 30%;
+}
+
 .header__title {
-  padding-bottom: 10px;
+  font-size: 35px;
+  margin: 10px auto 10px 30px;
 }

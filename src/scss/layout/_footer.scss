@@ -1,0 +1,13 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 5%;
+  width: 100%;
+  border-top: solid 1px $dark;
+  text-align: center;
+}
+.footer__text {
+  font-size: 12px;
+  position: relative;
+  top: 15%;
+}

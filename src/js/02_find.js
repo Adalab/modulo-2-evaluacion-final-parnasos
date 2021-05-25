@@ -10,7 +10,7 @@ function renderFilms(data) {
     );
 
     if (idExist === undefined) {
-      filmsList.innerHTML += `<li class="liElement js-liElement" data-id="${showAllData.id}"><h3 class="titleItem js-titleItem">${showAllData.name}</h3><img class="js-liPic${showAllData.id} liPic"></img></li>`;
+      filmsList.innerHTML += `<li class="liElement js-liElement" data-id="${showAllData.id}"><h3 class="liTitle js-titleItem">${showAllData.name}</h3><img class="js-liPic${showAllData.id} liPic"></img></li>`;
       const itemPic = document.querySelector(`.js-liPic${showAllData.id}`);
 
       if (showAllData.image === null) {
@@ -22,8 +22,8 @@ function renderFilms(data) {
         itemPic.setAttribute("src", `${showAllData.image.medium}`);
       }
     } else {
-      filmsList.innerHTML += `<li class="js-liElement liFavorite" data-id="${showAllData.id}"><h3 class="titleFav js-titleItem">${showAllData.name}</h3><img class="js-liPic${showAllData.id} liPic"></img></li>`;
-      const itemPic = document.querySelector(`.js-liPic${showAllData.id}`);
+      filmsList.innerHTML += `<li class="js-liElement liFavorite" data-id="${showAllData.id}"><h3 class="liTitleFav js-titleItem">${showAllData.name}</h3><img class="js-liPicFav${showAllData.id} liPicFav"></img></li>`;
+      const itemPic = document.querySelector(`.js-liPicFav${showAllData.id}`);
       if (showAllData.image === null) {
         itemPic.setAttribute(
           "src",
@@ -45,13 +45,11 @@ if (localStorage.getItem("favData") !== null) {
 }
 
 function renderFavorites(data) {
-  console.log(`entro ahora`, data);
   for (const item of data) {
-    console.log(`entro en el for`);
     if (item === null) {
       favoriteSection.innerHTML += "<h3>Hola</h3>";
     }
-    favoriteSection.innerHTML += `<li class="liFav js-liFav" data-id="${item.show.id}"><h3 class="titleFav js-titleFav">${item.show.name}</h3><img class="js-picFav${item.show.id} picFav"></img></li>`;
+    favoriteSection.innerHTML += `<li class="liFav js-liFav" data-id="${item.show.id}"><h3 class="titleFav js-titleFav">${item.show.name}</h3><img class="js-picFav${item.show.id} picFav"></img></li><div class= "line"></div>`;
     const picFav = document.querySelector(`.js-picFav${item.show.id}`);
 
     if (item.show.image === null) {

@@ -1,90 +1,139 @@
-.header {
-  margin: 30px auto 30px 30px;
+//FORM
+.main {
+  margin: 5px 35px;
 }
-
 .form {
   margin: 10px auto 30px 30px;
 }
-.btn {
+.form__search {
+  height: 35px;
+  width: 200px;
+  border-radius: 5px;
+  border: inset 2px $dark;
+  color: $almostwhite;
+  padding-left: 10px;
+  font-size: 14px;
+}
+.form__btn {
   margin-left: 20px;
+  border-radius: 5px;
+  height: 35px;
+  width: 60px;
+  border: inset 2px $dark;
+  cursor: pointer;
+  font-size: 15px;
+}
+input::placeholder {
+  color: $almostwhite;
+  font-size: 15px;
+  padding-left: 10px;
 }
 
+//SEARCHING CONTENT
 .contentResults {
   display: flex;
   margin: 30px;
-}
-
-.favoriteList {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  list-style: none;
+  padding: 20px 20px 30px 0;
 }
 
 .filmsList {
-  width: 80%;
+  margin-left: 80px;
   display: grid;
   grid-auto-rows: max-content;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
-
-.liFavorite {
-  background-color: $almostwhite;
-  width: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  border: dotted 3px $dark;
+  grid-gap: 30px;
 }
 .liElement {
-  //grid-column: 1/1;
-  //grid-row: ;
-  display: contents;
   background-color: $green;
   width: 180px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   border: dotted 3px $background;
+  border-radius: 10px;
 }
-
-.titleItem {
+.liFavorite {
+  background-color: $almostwhite;
+  width: 180px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: dotted 3px $dark;
+  border-radius: 10px;
+}
+.liTitle {
   background-color: $green;
   color: $almostwhite;
   font-size: 20px;
   margin: 10px;
 }
-.titleFav {
+.liTitleFav {
   background-color: $almostwhite;
-  color: $green;
+  color: $dark;
   font-size: 20px;
+  margin: 10px;
 }
-input::placeholder {
-  color: $almostwhite;
+.liPic,
+.liPicFav {
+  width: 140px;
+  margin-bottom: 5px;
 }
 .hidden {
   display: none;
 }
-.favoriteList__items {
-  display: contents;
-  text-decoration: none;
-}
-.footer {
-  display: none;
-  height: 5%;
-  width: 100%;
-  margin: auto;
+
+// FAVORITE LIST
+
+.favoriteList {
+  min-width: 240px;
+  max-height: content;
+  background-color: $grey;
+  border: dotted 3px $background;
+  border-radius: 10px;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  border-top: solid 1px $dark;
-  padding: 5px;
-  font-size: 14px;
+  padding-bottom: 20px;
+}
+.favoriteList__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $grey;
+  list-style: none;
+}
+.favoriteList__title {
+  font-size: 22px;
+  border-bottom: solid 2px $dark;
+  background-color: $grey;
+  color: $dark;
+  padding-bottom: 10px;
+  margin: 15px auto;
+}
+.liFav {
+  background-color: $grey;
+  padding: 10px 10px;
+}
+.titleFav {
+  background-color: $grey;
+  color: $dark;
+  padding-bottom: 15px;
+  font-size: 18px;
 }
 .picFav {
   width: 100px;
+  border: solid 3px $green;
+  box-sizing: content-box;
+  background-color: $grey;
+  color: $grey;
+}
+.line {
+  width: 100px;
+  height: 3px;
+  color: $green;
+  margin: 8px;
 }
