@@ -14,7 +14,6 @@ function handleClickFilm(event) {
   const idExist = favoriteFilms.find(
     (favoriteData) => favoriteData.show.id === filmId
   );
-  //console.log(filmId);
   if (idExist === undefined) {
     const objSerieData = allData.find(
       (serieData) => serieData.show.id === filmId
@@ -29,5 +28,3 @@ function handleClickFilm(event) {
   renderFilms(allData);
   renderFavorites(favoriteFilms);
 }
-//console.log(favoriteFilms);
-//onsole.log(allData);
