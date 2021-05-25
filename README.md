@@ -123,4 +123,4 @@ Favoritos Una vez aparecen los resultados de búsqueda, podremos indicar cuáles
 
 Almacenamiento local Hay que almacenar el listado de favoritos en el localStorage, de esta forma, al recargar la página, el listado de favoritos se mantiene como estaba.
 
-Gracias por visitar mi repositorio, será genial recibir feedback para mejorar!
+### Gracias por visitar mi repositorio, será genial recibir feedback para mejorar!
