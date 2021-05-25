@@ -38,6 +38,7 @@ function renderFilms(data) {
 }
 
 function renderFavorites(data) {
+  filmsList.innerHTML = "";
   for (const item of data) {
     if (item === null) {
       favoriteSection.innerHTML += "<h3>Hola</h3>";
