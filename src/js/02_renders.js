@@ -38,9 +38,9 @@ function renderFilms(data) {
 }
 
 function renderFavorites(data) {
-  favoriteSection.innerHTML = "";
   for (const item of data) {
     if (item === null) {
+      favoriteSection.innerHTML += "<h3>Hola</h3>";
     }
     favoriteSection.innerHTML += `<li class="liFav js-liFav" data-id="${item.show.id}"><h3 class="titleFav js-titleFav">${item.show.name}</h3><img class="js-picFav${item.show.id} picFav"></img></li><div class= "line"></div>`;
     const picFav = document.querySelector(`.js-picFav${item.show.id}`);
