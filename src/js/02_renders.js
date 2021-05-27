@@ -10,7 +10,7 @@ function renderFilms(data) {
     );
 
     if (idExist === undefined) {
-      filmsList.innerHTML += `<li class="liElement js-liElement" data-id="${showAllData.id}"><h3 class="liTitle js-titleItem">${showAllData.name}</h3><img class="js-liPic${showAllData.id} liPic"></img></li>`;
+      filmsList.innerHTML += `<li class="liElement js-liElement" data-id="${showAllData.id}"><h3 class="liTitle js-titleItem">${showAllData.name}</h3><h5 class="liDate js-liDate">${showAllData.schedule.days}</h5><img class="js-liPic${showAllData.id} liPic"></img></li>`;
       const itemPic = document.querySelector(`.js-liPic${showAllData.id}`);
 
       if (showAllData.image === null) {
@@ -22,7 +22,7 @@ function renderFilms(data) {
         itemPic.setAttribute("src", `${showAllData.image.medium}`);
       }
     } else {
-      filmsList.innerHTML += `<li class="js-liElement liFavorite" data-id="${showAllData.id}"><h3 class="liTitleFav js-titleItem">${showAllData.name}</h3><img class="js-liPicFav${showAllData.id} liPicFav"></img></li>`;
+      filmsList.innerHTML += `<li class="js-liElement liFavorite" data-id="${showAllData.id}"><h3 class="liTitleFav js-titleItem">${showAllData.name}</h3><h5 class="liDate js-liDate">${showAllData.schedule.days}</h5><img class="js-liPicFav${showAllData.id} liPicFav"></img></li>`;
       const itemPic = document.querySelector(`.js-liPicFav${showAllData.id}`);
       if (showAllData.image === null) {
         itemPic.setAttribute(

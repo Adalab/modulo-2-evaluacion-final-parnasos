@@ -14,10 +14,10 @@ function handleClickFilm(event) {
   const idExist = favoriteFilms.find(
     (favoriteData) => favoriteData.show.id === filmId
   );
+  const objSerieData = allData.find(
+    (serieData) => serieData.show.id === filmId
+  );
   if (idExist === undefined) {
-    const objSerieData = allData.find(
-      (serieData) => serieData.show.id === filmId
-    );
     favoriteFilms.push(objSerieData);
   } else {
     favoriteFilms = favoriteFilms.filter(
@@ -27,4 +27,5 @@ function handleClickFilm(event) {
   localStorage.setItem("favData", JSON.stringify(favoriteFilms));
   renderFilms(allData);
   renderFavorites(favoriteFilms);
+  console.log(objSerieData.show.name);
 }
